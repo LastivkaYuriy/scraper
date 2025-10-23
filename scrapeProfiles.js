@@ -16,7 +16,7 @@ const parseProxy = (p) => {
 };
 
 export const scrapeProfiles = async (urlsArr) => {
-  const progressFile = path.resolve("./progress_profiles.json");
+  const progressFile = path.resolve("./progress_profiles_2.json");
 
   // Load previous progress
   const saved = fs.existsSync(progressFile)
