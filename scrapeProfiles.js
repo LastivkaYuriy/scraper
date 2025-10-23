@@ -45,7 +45,7 @@ export const scrapeProfiles = async (urlsArr) => {
 
     const browser = await puppeteer.launch({
       headless: config.headless,
-      args: [`--proxy-server=${proxyArg}`],
+      args: [`--proxy-server=${proxyArg}`, '--no-sandbox'],
     });
 
     const page = await browser.newPage();
@@ -111,9 +111,12 @@ export const scrapeProfiles = async (urlsArr) => {
       }
 
       // Save success
+      if(profileData.name.length === 0) {
+        throw new Error("Name field is empty, likely a failed scrape");
+      }
       profiles.push(profileData);
       completedProfiles.add(link);
-      failedProfiles.delete(link); // remove from failed if previously failed
+      failedProfiles.delete(link);
 
       fs.writeFileSync(progressFile, JSON.stringify({
         profiles,
