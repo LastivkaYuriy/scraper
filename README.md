@@ -1,4 +1,7 @@
+```
 npm install
 npm start
+```
 after completion - rerun until no fails left
-npm run toxlsx to format into table
+
+`npm run to xlsx` to create table from data
