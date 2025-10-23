@@ -1,0 +1,73 @@
+{
+  "listing": {
+    "baseUrl": "https://crewdata.com/seafarers.php?lang=rus&country=Russia&page=",
+    "startPage": 495,
+    "endPage": 1357,
+    "linkSelector": "a.nameLink.indent"
+  },
+  "profile": {
+    "fields": {
+      "name": "h3.tableName.seafarerName",
+      "position1": "span.position1",
+      "position2": "span.position2",
+      "age": ".cellFlex.cellAge .indent .big",
+      "education": {
+        "listSelector": ".educationList .rowFlex",
+        "fields": {
+          "institution": ".cgf1 .ct1 .indent",
+          "city": ".cgf1 .ct2 .indent",
+          "specialty": ".cgf2 .ct3 .indent",
+          "number": ".cgf2 .ct4 .indent",
+          "dateStart": ".cgf3 .ct5 .indent",
+          "dateEnd": ".cgf3 .ct6 .indent"
+        }
+      },
+      "experience": {
+        "listSelector": ".seamanExpirienceList .rowFlex",
+        "fields": {
+          "vessel": ".cgf1 .ct1 .indent",
+          "rank": ".cgf1 .ct2 .indent",
+          "dateStart": ".cgf2 .ct3 .indent",
+          "dateEnd": ".cgf2 .ct4 .indent",
+          "shipOwner": ".cgf3 .ct5 .indent",
+          "crewing": ".cgf3 .ct6 .indent"
+        }
+      }
+    },
+    "headers": {
+      "name": "Full Name",
+      "position1": "Primary Rank",
+      "position2": "Secondary Rank",
+      "age": "Age",
+      "education": "institution | city | specialty | number | dateStart-dateEnd",
+      "experience": "vessel | rank | dateStart-dateEnd | shipOwner | crewing"
+    }
+  },
+  "pageOptions": {
+    "timeout": 40000
+  },
+  "delayBetweenPages": 1500,
+  "delayBetweenProfiles": 1500,
+  "backlog_output": {
+    "filename": "crewdata_backlog.json"
+  },
+  "output": {
+    "filename": "crewdata_profiles_2.xlsx",
+    "sheetName": "Profiles",
+    "csvFallback": true
+  },
+  "proxies": [
+    "192.146.138.203:12323:14a9713683aad:58c0d256b4",
+    "192.146.139.26:12323:14a9713683aad:58c0d256b4",
+    "192.146.139.237:12323:14a9713683aad:58c0d256b4",
+    "192.146.139.140:12323:14a9713683aad:58c0d256b4",
+    "192.146.138.184:12323:14a9713683aad:58c0d256b4",
+    "192.140.3.33:12323:14a9713683aad:58c0d256b4",
+    "192.140.3.64:12323:14a9713683aad:58c0d256b4",
+    "192.140.2.42:12323:14a9713683aad:58c0d256b4",
+    "192.140.2.108:12323:14a9713683aad:58c0d256b4",
+    "192.140.2.132:12323:14a9713683aad:58c0d256b4"
+  ],
+  "headless": true,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6164.87 Safari/537.36 Edg/121.0.2049.56"
+}

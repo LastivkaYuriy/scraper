@@ -1,0 +1,19 @@
+{
+  "name": "scrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scrapeProfiles.js",
+    "toxlsx": "node toXLSX.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.3.2",
+    "puppeteer": "^24.25.0",
+    "xlsx": "^0.18.5",
+    "yargs": "^18.0.0"
+  }
+}
